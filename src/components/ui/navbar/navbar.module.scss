@@ -1,0 +1,27 @@
+.navbar {
+  width: 100vw;
+  height: 13vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  .navbarList {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 100vw;
+    .listOption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 10px;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
