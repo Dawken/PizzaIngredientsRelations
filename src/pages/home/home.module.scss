@@ -1,3 +1,13 @@
 .layout {
-  width: 100vw
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e1d1d;
+  .pizzas {
+    margin: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: center;
+    grid-gap: 15vh;
+    align-content: center;
+  }
 }

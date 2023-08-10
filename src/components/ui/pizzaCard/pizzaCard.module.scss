@@ -1,0 +1,41 @@
+.pizzaCard {
+    width: 22vh;
+    background-color: #151515;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    margin: 20px 10px;
+    transition: 0.3s;
+    .pizzaPhotoContainer {
+        display: flex;
+        justify-content: center;
+        .pizzaPhoto {
+            width: 19vh;
+            height: 19vh;
+            margin: 10px;
+            border-radius: 8px;
+            -webkit-box-shadow: 0 0 18px 1px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 0 0 18px 1px rgba(0, 0, 0, 1);
+            box-shadow: 0 0 18px 1px rgba(0, 0, 0, 1);
+        }
+    }
+    .pizzaName {
+        margin: 10px 20px;
+        font-size: 1rem;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 2.4em;
+        line-height: 1.2em;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: white;
+        font-family: 'Varela Round', sans-serif;
+        font-weight: bold;
+    }
+}
+.pizzaCard:hover {
+    background-color: #1f1f1f;
+    transition: 0.3s;
+    cursor: pointer;
+}
