@@ -1,8 +1,9 @@
 import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Layout from './pages/home/home'
+import Home from './pages/home/home'
 import Pizza from './pages/pizza/pizza'
+import Ingredients from './pages/ingredients/ingredients'
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -17,8 +18,9 @@ const App = () => {
         <QueryClientProvider client={queryClient}>
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<Layout />} />
+                    <Route path='/' element={<Home />} />
                     <Route path={'/pizzas/:id'} element={<Pizza />} />
+                    <Route path={'/ingredients'} element={<Ingredients />} />
                 </Routes>
             </BrowserRouter>
         </QueryClientProvider>

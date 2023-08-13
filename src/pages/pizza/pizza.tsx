@@ -25,7 +25,7 @@ const Pizza = () => {
                                 className={styles.pizzaPhoto}
                             ></img>
                             <div className={styles.pizzaName}>
-                                {pizza?.data.pizzaName}
+                                {pizza?.data.name}
                             </div>
                         </div>
                         <div className={styles.pizzaOptions}>
@@ -42,7 +42,7 @@ const Pizza = () => {
                                                     variant='contained'
                                                     className={styles.option}
                                                 >
-                                                    {ingredient.ingredientName}
+                                                    {ingredient.name}
                                                 </Button>
                                             </Link>
                                         )
@@ -62,7 +62,7 @@ const Pizza = () => {
                                                     variant='contained'
                                                     className={styles.option}
                                                 >
-                                                    {operation.operationName}
+                                                    {operation.name}
                                                 </Button>
                                             </Link>
                                         )

@@ -1,5 +1,5 @@
 export type IngredientType = {
-    ingredientName: string
+    name: string
     operation: string
     pizzas: string[]
     _id: string

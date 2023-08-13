@@ -4,6 +4,6 @@ import { IngredientType } from './ingredient'
 export type PizzaType = {
     ingredients: [string | IngredientType]
     operations: [string | OperationType]
-    pizzaName: string
+    name: string
     _id: string
 }

@@ -1,6 +1,6 @@
 export type OperationType = {
     ingredients: string[]
-    operationName: string
+    name: string
     pizzas: string[]
     _id: string
 }

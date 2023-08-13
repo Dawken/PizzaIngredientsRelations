@@ -2,16 +2,21 @@ import React from 'react'
 import styles from './itemCard.module.scss'
 import notFound from '../../../assets/notFound.png'
 import { PizzaType } from '../../../types/pizza'
-import { Link } from 'react-router-dom'
+import { IngredientType } from '../../../types/ingredient'
+import { OperationType } from '../../../types/operation'
 
-const ItemCard = ({ item }: { item: PizzaType }) => {
+type ItemCardType = {
+    item: PizzaType | IngredientType | OperationType
+}
+
+const ItemCard = ({ item }: ItemCardType) => {
     return (
-        <Link to={`/pizzas/${item._id}`} className={styles.pizzaCard}>
-            <div className={styles.pizzaPhotoContainer}>
-                <img className={styles.pizzaPhoto} src={notFound} />
+        <div className={styles.card}>
+            <div className={styles.cardPhotoContainer}>
+                <img className={styles.cardPhoto} src={notFound} />
             </div>
-            <div className={styles.pizzaName}>{item.pizzaName}</div>
-        </Link>
+            <div className={styles.cardName}>{item.name}</div>
+        </div>
     )
 }
 export default ItemCard
