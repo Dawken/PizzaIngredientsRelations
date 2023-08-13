@@ -11,7 +11,7 @@ const Navbar = () => {
             <div className={styles.navbarList}>
                 <Link to={'/'} className={styles.listOption}>
                     <LocalPizzaIcon />
-                    Pizza
+                    Pizzas
                 </Link>
                 <Link to={'/operations'} className={styles.listOption}>
                     <RestaurantMenuIcon />
