@@ -2,6 +2,7 @@ import React from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './pages/home/home'
+import Pizza from './pages/pizza/pizza'
 
 
 const queryClient = new QueryClient({
@@ -18,6 +19,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
               <Route path='/' element={<Layout />} />
+              <Route path={'/pizzas/:id'} element={<Pizza />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

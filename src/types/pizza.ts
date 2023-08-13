@@ -1,6 +1,9 @@
+import { OperationType } from './operation'
+import { IngredientType } from './ingredient'
+
 export type PizzaType = {
-    ingredient: string[]
-    operation: string[]
-    pizza: string
+    ingredients: [string | IngredientType]
+    operations: [string | OperationType]
+    pizzaName: string
     _id: string
 }

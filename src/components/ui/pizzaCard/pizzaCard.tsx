@@ -2,12 +2,13 @@ import React from 'react'
 import styles from './pizzaCard.module.scss'
 import notFound from '../../../assets/notFound.png'
 import { PizzaType } from '../../../types/pizza'
+import { Link } from 'react-router-dom'
 
 
 const PizzaCard = ({item}: {item: PizzaType}) => {
 
     return (
-        <div className={styles.pizzaCard}>
+        <Link to={`/pizzas/${item._id}`} className={styles.pizzaCard}>
             <div className={styles.pizzaPhotoContainer}>
                 <img
                     className={styles.pizzaPhoto}
@@ -15,9 +16,9 @@ const PizzaCard = ({item}: {item: PizzaType}) => {
                 />
             </div>
             <div className={styles.pizzaName}>
-                {item.pizza}
+                {item.pizzaName}
             </div>
-        </div>
+        </Link>
     )
 }
 export default PizzaCard

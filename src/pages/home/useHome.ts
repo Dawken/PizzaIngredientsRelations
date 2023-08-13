@@ -4,13 +4,13 @@ import { useQuery } from 'react-query'
 
 const useHome = () => {
 
-    const { data } = useQuery('pizzas', () =>
+    const { data:pizzas } = useQuery('pizzas', () =>
         lignumSoftBackend.get('/api/pizzas')
     )
 
 
     return {
-        data
+        pizzas
     }
 }
 export default useHome

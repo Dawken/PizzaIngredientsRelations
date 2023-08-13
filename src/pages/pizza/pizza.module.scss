@@ -1,0 +1,41 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 20px;
+  font-family: 'Varela Round', sans-serif;
+  min-height: 60vh;
+  .pizza {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .pizzaPhoto {
+      width: 30vh;
+      margin: 10px;
+      border-radius: 12px;
+    }
+
+    .pizzaName {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .pizzaOptions {
+      margin: 10px 60px;
+      font-size: 1.5rem;
+
+      .options {
+        display: flex;
+        flex-direction: column;
+
+        .option {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
