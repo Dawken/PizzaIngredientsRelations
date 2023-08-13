@@ -32,7 +32,8 @@
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-n": "15.2.4",
         "eslint-plugin-promise": "6.0.0",
-        "husky": "8.0.0"
+        "husky": "8.0.0",
+        "react-toastify": "9.1.2"
     },
     "scripts": {
         "start": "react-scripts start",

@@ -4,6 +4,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/home'
 import Pizza from './pages/pizza/pizza'
 import Ingredients from './pages/ingredients/ingredients'
+import Ingredient from './pages/ingredient/ingredient'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -21,7 +24,20 @@ const App = () => {
                     <Route path='/' element={<Home />} />
                     <Route path={'/pizzas/:id'} element={<Pizza />} />
                     <Route path={'/ingredients'} element={<Ingredients />} />
+                    <Route path={'/ingredients/:id'} element={<Ingredient />} />
                 </Routes>
+                <ToastContainer
+                    position='top-left'
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme='dark'
+                />
             </BrowserRouter>
         </QueryClientProvider>
     )
