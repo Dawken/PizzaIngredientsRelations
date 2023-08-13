@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react'
-import useIngredient from './useIngredient'
 import Navbar from '../../components/ui/navbar/navbar'
-import styles from './ingredient.module.scss'
+import styles from './operation.module.scss'
 import { Button, CircularProgress } from '@mui/material'
 import notFound from '../../assets/notFound.png'
 import { Link } from 'react-router-dom'
 import { PizzaType } from '../../types/pizza'
+import { IngredientType } from '../../types/ingredient'
+import useOperation from './useOperation'
 
 const Ingredient = () => {
-    const { isLoading, ingredient } = useIngredient()
+    const { isLoading, operation } = useOperation()
 
     return (
         <Fragment>
@@ -17,20 +18,20 @@ const Ingredient = () => {
                 {isLoading ? (
                     <CircularProgress size={60} />
                 ) : (
-                    <div className={styles.ingredient}>
+                    <div className={styles.operation}>
                         <div>
                             <img
                                 src={notFound}
-                                className={styles.ingredientPhoto}
+                                className={styles.operationPhoto}
                             ></img>
-                            <div className={styles.ingredientName}>
-                                {ingredient?.data.name}
+                            <div className={styles.operationName}>
+                                {operation?.data.name}
                             </div>
                         </div>
-                        <div className={styles.ingredientOptions}>
+                        <div className={styles.operationOptions}>
                             Pizzas:
                             <div className={styles.options}>
-                                {ingredient?.data.pizzas.map(
+                                {operation?.data.pizzas.map(
                                     (pizza: PizzaType) => {
                                         return (
                                             <Link
@@ -48,18 +49,25 @@ const Ingredient = () => {
                                     }
                                 )}
                             </div>
-                            Operation:
+                            Ingredients:
                             <div className={styles.options}>
-                                <Link
-                                    to={`/operations/${ingredient?.data.operation._id}`}
-                                >
-                                    <Button
-                                        variant='contained'
-                                        className={styles.option}
-                                    >
-                                        {ingredient?.data.operation.name}
-                                    </Button>
-                                </Link>
+                                {operation?.data.ingredients.map(
+                                    (ingredient: IngredientType) => {
+                                        return (
+                                            <Link
+                                                to={`/ingredients/${ingredient._id}`}
+                                                key={ingredient._id}
+                                            >
+                                                <Button
+                                                    variant='contained'
+                                                    className={styles.option}
+                                                >
+                                                    {ingredient.name}
+                                                </Button>
+                                            </Link>
+                                        )
+                                    }
+                                )}
                             </div>
                         </div>
                     </div>
