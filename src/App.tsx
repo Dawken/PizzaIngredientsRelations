@@ -4,26 +4,24 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './pages/home/home'
 import Pizza from './pages/pizza/pizza'
 
-
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+        },
     },
-  },
 })
 
 const App = () => {
-  return (
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <Routes>
-              <Route path='/' element={<Layout />} />
-              <Route path={'/pizzas/:id'} element={<Pizza />} />
-          </Routes>
-        </BrowserRouter>
-      </QueryClientProvider>
-  )
+    return (
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<Layout />} />
+                    <Route path={'/pizzas/:id'} element={<Pizza />} />
+                </Routes>
+            </BrowserRouter>
+        </QueryClientProvider>
+    )
 }
-
 export default App

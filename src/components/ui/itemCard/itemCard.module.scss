@@ -1,12 +1,16 @@
 .pizzaCard {
     width: 22vh;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
     backdrop-filter: blur(21px);
     -webkit-backdrop-filter: blur(21px);
     -webkit-box-shadow: 0 0 28px 3px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0 0 28px 3px rgba(0, 0, 0, 1);
     box-shadow: 0 0 28px 3px rgba(0, 0, 0, 1);
-    border: 1px solid rgba(255,255,255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 8px;
     text-align: center;
     color: white;
