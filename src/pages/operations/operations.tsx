@@ -5,27 +5,31 @@ import { Link } from 'react-router-dom'
 import ItemCard from '../../components/ui/itemCard/itemCard'
 import useOperations from './useOperations'
 import { OperationType } from '../../types/operation'
+import arrayFrom from '../../utils/arrayFrom'
+import SkeletonItemCard from '../../components/animations/skeletonLoading/skeletonItemCard'
 
 const Operations = () => {
-    const { operations } = useOperations()
+    const { isLoading, operations } = useOperations()
 
     return (
         <div className={styles.layout}>
             <Navbar />
             <div className={styles.operations}>
-                {operations?.data.map((operation: OperationType) => {
-                    return (
-                        <Link
-                            to={`/operations/${operation._id}`}
-                            key={operation._id}
-                        >
-                            <ItemCard
-                                name={operation.name}
-                                key={operation._id}
-                            />
-                        </Link>
-                    )
-                })}
+                {isLoading
+                    ? arrayFrom(5, <SkeletonItemCard />)
+                    : operations?.data.map((operation: OperationType) => {
+                          return (
+                              <Link
+                                  to={`/operations/${operation._id}`}
+                                  key={operation._id}
+                              >
+                                  <ItemCard
+                                      name={operation.name}
+                                      key={operation._id}
+                                  />
+                              </Link>
+                          )
+                      })}
             </div>
         </div>
     )

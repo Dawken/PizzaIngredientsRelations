@@ -3,7 +3,7 @@ import { useQuery } from 'react-query'
 import { toast } from 'react-toastify'
 
 const useOperations = () => {
-    const { data: operations } = useQuery(
+    const { isLoading, data: operations } = useQuery(
         'operations',
         () => lignumSoftBackend.get('/api/operations'),
         {
@@ -14,6 +14,7 @@ const useOperations = () => {
     )
 
     return {
+        isLoading,
         operations,
     }
 }
