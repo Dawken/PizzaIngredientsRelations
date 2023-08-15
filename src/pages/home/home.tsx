@@ -16,7 +16,7 @@ const Home = () => {
                 {pizzas?.data.map((pizza: PizzaType) => {
                     return (
                         <Link to={`/pizzas/${pizza._id}`} key={pizza._id}>
-                            <ItemCard item={pizza} key={pizza._id} />
+                            <ItemCard name={pizza.name} key={pizza._id} />
                         </Link>
                     )
                 })}

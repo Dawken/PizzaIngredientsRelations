@@ -19,7 +19,10 @@ const Operations = () => {
                             to={`/operations/${operation._id}`}
                             key={operation._id}
                         >
-                            <ItemCard item={operation} key={operation._id} />
+                            <ItemCard
+                                name={operation.name}
+                                key={operation._id}
+                            />
                         </Link>
                     )
                 })}

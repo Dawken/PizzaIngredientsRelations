@@ -19,7 +19,10 @@ const Ingredients = () => {
                             to={`/ingredients/${ingredient._id}`}
                             key={ingredient._id}
                         >
-                            <ItemCard item={ingredient} key={ingredient._id} />
+                            <ItemCard
+                                name={ingredient.name}
+                                key={ingredient._id}
+                            />
                         </Link>
                     )
                 })}
