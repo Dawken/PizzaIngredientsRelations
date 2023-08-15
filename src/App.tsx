@@ -9,6 +9,7 @@ import Operations from './pages/operations/operations'
 import Operation from './pages/operation/operation'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import PageNotFound from './pages/pageNotFound/pageNotFound'
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -29,6 +30,7 @@ const App = () => {
                     <Route path={'/ingredients/:id'} element={<Ingredient />} />
                     <Route path={'/operations'} element={<Operations />} />
                     <Route path={'/operations/:id'} element={<Operation />} />
+                    <Route path='*' element={<PageNotFound />} />
                 </Routes>
                 <ToastContainer
                     position='top-left'
