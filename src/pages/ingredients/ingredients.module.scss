@@ -1,6 +1,19 @@
 .layout {
   width: 100vw;
   min-height: 100vh;
+  font-family: 'Varela Round', sans-serif;
+  .ingredientsNotFound {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ingredientIcon {
+    font-size: 50px;
+  }
   .ingredients {
     margin: 70px;
     display: grid;

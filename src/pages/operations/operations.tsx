@@ -7,6 +7,7 @@ import useOperations from './useOperations'
 import { OperationType } from '../../types/operation'
 import arrayFrom from '../../utils/arrayFrom'
 import SkeletonItemCard from '../../components/animations/skeletonLoading/skeletonItemCard'
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 
 const Operations = () => {
     const { isLoading, operations } = useOperations()
@@ -14,23 +15,30 @@ const Operations = () => {
     return (
         <div className={styles.layout}>
             <Navbar />
-            <div className={styles.operations}>
-                {isLoading
-                    ? arrayFrom(5, <SkeletonItemCard />)
-                    : operations?.data.map((operation: OperationType) => {
-                          return (
-                              <Link
-                                  to={`/operations/${operation._id}`}
-                                  key={operation._id}
-                              >
-                                  <ItemCard
-                                      name={operation.name}
+            {operations?.data.length === 0 ? (
+                <div className={styles.operationsNotFound}>
+                    <RestaurantMenuIcon className={styles.operationIcon} />
+                    <p>No operations found :(</p>
+                </div>
+            ) : (
+                <div className={styles.operations}>
+                    {isLoading
+                        ? arrayFrom(5, <SkeletonItemCard />)
+                        : operations?.data.map((operation: OperationType) => {
+                              return (
+                                  <Link
+                                      to={`/operations/${operation._id}`}
                                       key={operation._id}
-                                  />
-                              </Link>
-                          )
-                      })}
-            </div>
+                                  >
+                                      <ItemCard
+                                          name={operation.name}
+                                          key={operation._id}
+                                      />
+                                  </Link>
+                              )
+                          })}
+                </div>
+            )}
         </div>
     )
 }
