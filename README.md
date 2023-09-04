@@ -1,4 +1,7 @@
-Backend: https://github.com/Dawken/LignumsoftPizzaBackend
+Backend: https://github.com/Dawken/PizzaIngredientsRelationsBackend
+
+A small project with relations between pizza, igredients and operations in MongoDB database. I trained here skills in making relations between database objects and proxy api calls.
+
 Technologies
 
     React 18.2
